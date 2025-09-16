@@ -1,0 +1,16 @@
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Order.API.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class OrdersController : ControllerBase
+    {
+        [HttpPost]
+        public Task<IActionResult> CreateOrder()
+        {
+            
+        }   
+    }
+}
