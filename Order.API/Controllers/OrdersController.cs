@@ -41,7 +41,7 @@ namespace Order.API.Controllers
 
             await _context.Orders.AddAsync(order);
             await _context.SaveChangesAsync();
-            
+
             OrderCreatedEvent orderCreatedEvent = new()
             {
                 OrderId = order.OrderId,
@@ -50,7 +50,8 @@ namespace Order.API.Controllers
                 {
                     ProductId = oi.ProductId,
                     Count = oi.Count,
-                }).ToList()
+                }).ToList(),
+                TotalPrice = order.TotalPrice,
             };
             await _publishEndpoint.Publish(orderCreatedEvent);
 

@@ -13,6 +13,7 @@ namespace Shared.Events
         public Guid OrderId { get; set; }
         public Guid BuyerId { get; set; }
         public List<OrderItemMessage> OrderItems { get; set; }
+        public  decimal TotalPrice { get; set; }
 
     }
 }
