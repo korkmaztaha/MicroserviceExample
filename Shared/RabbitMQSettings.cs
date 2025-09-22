@@ -8,7 +8,7 @@ namespace Shared
 {
     public static class RabbitMQSettings
     {
-        public const string Stock_OrderCreatedEventQueue = "stock-order-event-queue";
-      
+        public const string Stock_OrderCreatedEventQueue = "stock-order-event-queue";{ get; set; }
+
     }
 }
