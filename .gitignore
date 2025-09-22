@@ -363,3 +363,5 @@ MigrationBackup/
 FodyWeavers.xsd
 /Order.API/appsettings.json
 /Stock.API/appsettings.json
+/Payment.API/appsettings.json
+/Payment.API/appsettings.json
