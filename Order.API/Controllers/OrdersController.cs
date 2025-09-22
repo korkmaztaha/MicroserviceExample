@@ -53,7 +53,7 @@ namespace Order.API.Controllers
                 }).ToList(),
                 TotalPrice = order.TotalPrice,
             };
-            //yayınlandığında sub olan tüm servisler bu eventten haberdar olacak
+            //yayınlandığında sub olan tüm servisler bu eventten haberdar olacak. Event bazlı gönderim.
             await _publishEndpoint.Publish(orderCreatedEvent);
 
             return Ok();
