@@ -22,7 +22,17 @@ namespace Payment.API.Consumers
                   
                 };
                 _publishEndpoint.Publish(paymentCompletedEvent);
-
+                Console.WriteLine("Payment Completed");
+            }
+            else
+            {
+                PaymentFailedEvent paymentFailedEvent = new()
+                {
+                    OrderId = context.Message.OrderId,
+                    Message = "Payment Failed"
+                };
+                _publishEndpoint.Publish(paymentFailedEvent);
+                Console.WriteLine("Payment Failed");    
             }
 
             return Task.CompletedTask;
