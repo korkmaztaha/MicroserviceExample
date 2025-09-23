@@ -19,6 +19,7 @@ namespace Order.API.Consumer
         {
             Models.Entites.Order order = await _dbContext.Orders.FirstOrDefaultAsync(x => x.OrderId == context.Message.OrderId);
             order.OrderStatu = Models.Enums.OrderStatus.Completed;
+            await _dbContext.SaveChangesAsync();
         }
     }
 }
