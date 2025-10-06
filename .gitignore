@@ -365,3 +365,4 @@ FodyWeavers.xsd
 /Stock.API/appsettings.json
 /Payment.API/appsettings.json
 /Payment.API/appsettings.json
+/2PC.Example/Coordinator/appsettings.json
