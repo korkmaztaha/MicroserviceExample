@@ -34,7 +34,7 @@ namespace Order.API.Controllers
             {
                 Count = oi.Count,
                 Price = oi.Price,
-                ProductId = oi.ProductId,
+                ProductId =  oi.ProductId.ToString(),
             }).ToList();
 
             order.TotalPrice = createOrder.OrderItems.Sum(oi => oi.Price * oi.Count);

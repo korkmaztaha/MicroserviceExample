@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stock.API", "Stock.API\Stoc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payment.API", "Payment.API\Payment.API.csproj", "{D1046D4A-A897-410C-9283-ED8295347E5B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SimpleProject", "SimpleProject", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +38,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A161543F-0B75-4955-8CE2-1A8DE58A9FF4} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{8BEA51DC-4ADC-4A5E-8954-CB2C96D5006A} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{2D79643B-E3D9-4A16-A13A-AB0441C08E66} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{D1046D4A-A897-410C-9283-ED8295347E5B} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {ECB2FB27-3DF2-4B51-986A-220D03D5CE86}
