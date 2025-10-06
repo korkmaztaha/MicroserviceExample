@@ -366,3 +366,6 @@ FodyWeavers.xsd
 /Payment.API/appsettings.json
 /Payment.API/appsettings.json
 /2PC.Example/Coordinator/appsettings.json
+/SimpleProject/Stock.API/appsettings.json
+/SimpleProject/Payment.API/appsettings.json
+/SimpleProject/Order.API/appsettings.json
