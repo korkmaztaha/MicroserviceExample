@@ -4,6 +4,7 @@ using Coordinator.Models.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Coordinator.Migrations
 {
     [DbContext(typeof(TwoPhaseCommitContext))]
-    partial class TwoPhaseCommitContextModelSnapshot : ModelSnapshot
+    [Migration("20251007155838_mig-2")]
+    partial class mig2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -39,17 +42,17 @@ namespace Coordinator.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("10000000-0000-0000-0000-000000000001"),
+                            Id = new Guid("7a8f1af9-c6d2-413f-b6a2-71775ea9403a"),
                             Name = "Order.API"
                         },
                         new
                         {
-                            Id = new Guid("20000000-0000-0000-0000-000000000002"),
+                            Id = new Guid("59ae36da-a681-40e9-9656-9872d98d1c33"),
                             Name = "Payment.API"
                         },
                         new
                         {
-                            Id = new Guid("30000000-0000-0000-0000-000000000003"),
+                            Id = new Guid("82e6db3f-e8ec-47f9-aef2-bcfef8d64ee1"),
                             Name = "Stock.API"
                         });
                 });
