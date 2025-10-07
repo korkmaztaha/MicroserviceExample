@@ -13,7 +13,11 @@ builder.Services.AddDbContext<TwoPhaseCommitContext>(options => options.UseSqlSe
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+//Coordinator un iletiþime geçeceði servislerin base adresleri Merkezi, db veya bir serviceden çekilerek yapýlabilir.
+builder.Services.AddHttpClient("OrderAPI", client => client.BaseAddress = new("https://localhost:7021/"));
+builder.Services.AddHttpClient("StockAPI", client => client.BaseAddress = new("https://localhost:7172/"));
+builder.Services.AddHttpClient("PaymentAPI", client => client.BaseAddress = new("https://localhost:7116/"));
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
