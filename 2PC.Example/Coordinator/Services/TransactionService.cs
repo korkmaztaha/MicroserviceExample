@@ -58,11 +58,13 @@ namespace Coordinator.Services
             await _context.SaveChangesAsync();
         }
 
+        public Task<bool> CheckReadyServicesAsync(Guid transactionId) =>_context.NodeStates
+        .Where(ns => ns.TransactionId == transactionId)
+        .AllAsync(ns => ns.IsReady == Enums.ReadyType.Ready);
+        //public async Task<bool> CheckReadyServicesAsync(Guid transactionId) => (await _context.NodeStates
+        //    .Where(ns => ns.TransactionId == transactionId)
+        //    .ToListAsync()).TrueForAll(ns => ns.IsReady == Enums.ReadyType.Ready);
 
-        public Task<bool> CheckReadyServicesAsync(Guid transactionId)
-        {
-            throw new NotImplementedException();
-        }
 
         public Task<bool> CheckTransactionStateServiceAsync(Guid transactionId)
         {
