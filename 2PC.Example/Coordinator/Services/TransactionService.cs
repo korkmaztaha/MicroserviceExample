@@ -58,20 +58,45 @@ namespace Coordinator.Services
             await _context.SaveChangesAsync();
         }
 
-        public Task<bool> CheckReadyServicesAsync(Guid transactionId) =>_context.NodeStates
+        public Task<bool> CheckReadyServicesAsync(Guid transactionId) => _context.NodeStates
         .Where(ns => ns.TransactionId == transactionId)
         .AllAsync(ns => ns.IsReady == Enums.ReadyType.Ready);
         //public async Task<bool> CheckReadyServicesAsync(Guid transactionId) => (await _context.NodeStates
         //    .Where(ns => ns.TransactionId == transactionId)
         //    .ToListAsync()).TrueForAll(ns => ns.IsReady == Enums.ReadyType.Ready);
 
-
-        public Task<bool> CheckTransactionStateServiceAsync(Guid transactionId)
+        public async Task CommitAsync(Guid transactionId)
         {
-            throw new NotImplementedException();
+            var transactionNodes = await _context.NodeStates
+                                    .Where(ns => ns.TransactionId == transactionId)
+                                    .Include(ns => ns.Node)
+                                    .ToListAsync();
+
+            foreach (var transactionNode in transactionNodes)
+            {
+                try
+                {
+                    var response = await (transactionNode.Node.Name switch
+                    {
+                        "Order.API" => _orderHttpClient.GetAsync("commit"),
+                        "Stock.API" => _stockHttpClient.GetAsync("commit"),
+                        "Payment.API" => _paymentHttpClient.GetAsync("commit")
+                    });
+
+                    var result = bool.Parse(await response.Content.ReadAsStringAsync());
+                    transactionNode.TransactionState = result ? Enums.TransactionState.Done : Enums.TransactionState.Abort;
+                }
+                catch
+                {
+                    transactionNode.TransactionState = Enums.TransactionState.Abort;
+                }
+            }
+
+            await _context.SaveChangesAsync();
         }
 
-        public Task CommitAsync(Guid transactionId)
+
+        public Task<bool> CheckTransactionStateServiceAsync(Guid transactionId)
         {
             throw new NotImplementedException();
         }
