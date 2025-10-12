@@ -1,11 +1,13 @@
 using Coordinator.Models.Contexts;
+using Coordinator.Services;
+using Coordinator.Services.Abstractions;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -18,16 +20,31 @@ builder.Services.AddHttpClient("OrderAPI", client => client.BaseAddress = new("h
 builder.Services.AddHttpClient("StockAPI", client => client.BaseAddress = new("https://localhost:7172/"));
 builder.Services.AddHttpClient("PaymentAPI", client => client.BaseAddress = new("https://localhost:7116/"));
 
+builder.Services.AddSingleton<ITransactionService, TransactionService>();
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+app.MapGet("/create-order-transaction", async (ITransactionService transactionService) =>
+{
+    //1. Adým: prapere
+    var transactionId = await transactionService.CreateTransactionAsync();
+    await transactionService.PrepareServicesAsync(transactionId);
+    bool transactionState = await transactionService.CheckReadyServicesAsync(transactionId);
 
-app.UseAuthorization();
+    if (transactionState)
+    {
+        //2.adým
+        await transactionService.CommitAsync(transactionId);
+        transactionState = await transactionService.CheckTransactionStateServiceAsync(transactionId);
+    }
 
-app.MapControllers();
+    if (!transactionState)
+        await transactionService.RollbackAsync(transactionId);
+});
+
 
 app.Run();
