@@ -96,13 +96,10 @@ namespace Coordinator.Services
         }
 
 
-        public Task<bool> CheckTransactionStateServiceAsync(Guid transactionId)
-        {
-            throw new NotImplementedException();
-        }
-
-
-
+        public async Task<bool> CheckTransactionStateServiceAsync(Guid transactionId) => (await _context.NodeStates.
+            Where(ns => ns.TransactionId == transactionId).
+            ToListAsync()).
+            TrueForAll(ns => ns.TransactionState == Enums.TransactionState.Done);
 
 
         public Task RollbackAsync(Guid transactionId)
