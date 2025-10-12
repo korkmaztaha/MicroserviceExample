@@ -102,9 +102,35 @@ namespace Coordinator.Services
             TrueForAll(ns => ns.TransactionState == Enums.TransactionState.Done);
 
 
-        public Task RollbackAsync(Guid transactionId)
+        public async Task RollbackAsync(Guid transactionId)
         {
-            throw new NotImplementedException();
+            var transactionNodes = await _context.NodeStates.
+                 Where(ns => ns.TransactionId == transactionId).
+                 Include(ns => ns.Node).
+                 ToArrayAsync();
+
+            foreach (var transactionNode in transactionNodes)
+            {
+                try
+                {
+                    if (transactionNode.TransactionState == Enums.TransactionState.Done)
+                        _ = await (transactionNode.Node.Name switch
+                        {
+                            "Order.API" => _orderHttpClient.GetAsync("rollback"),
+                            "Stock.API" => _stockHttpClient.GetAsync("rollback"),
+                            "Payment.API" => _paymentHttpClient.GetAsync("rollback")
+                        });
+                    transactionNode.TransactionState = Enums.TransactionState.Abort;
+
+                }
+                catch
+                {
+                    transactionNode.TransactionState = Enums.TransactionState.Abort;
+
+                }
+            }
+            await _context.SaveChangesAsync();
+
         }
     }
 }
