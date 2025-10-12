@@ -13,15 +13,16 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<TwoPhaseCommitContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("SQLServer")));
 
-var app = builder.Build();
+
 
 //Coordinator un iletiþime geçeceði servislerin base adresleri Merkezi, db veya bir serviceden çekilerek yapýlabilir.
 builder.Services.AddHttpClient("OrderAPI", client => client.BaseAddress = new("https://localhost:7021/"));
 builder.Services.AddHttpClient("StockAPI", client => client.BaseAddress = new("https://localhost:7172/"));
 builder.Services.AddHttpClient("PaymentAPI", client => client.BaseAddress = new("https://localhost:7116/"));
 
-builder.Services.AddSingleton<ITransactionService, TransactionService>();
 
+builder.Services.AddTransient<ITransactionService, TransactionService>();
+var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
