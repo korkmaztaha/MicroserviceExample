@@ -369,3 +369,6 @@ FodyWeavers.xsd
 /SimpleProject/Stock.API/appsettings.json
 /SimpleProject/Payment.API/appsettings.json
 /SimpleProject/Order.API/appsettings.json
+/Saga.Choreography.Example/Order.API/appsettings.json
+/Saga.Choreography.Example/Payment.API/appsettings.json
+/Saga.Choreography.Example/Stock.API/appsettings.json
