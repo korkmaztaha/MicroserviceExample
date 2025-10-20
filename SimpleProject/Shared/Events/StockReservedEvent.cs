@@ -1,4 +1,5 @@
 ﻿using Shared.Events.Common;
+using Shared.Messages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,5 +13,9 @@ namespace Shared.Events
         public Guid BuyerId { get; set; }
         public Guid OrderId { get; set; }
         public decimal TotalPrice { get; set; }
+
+        public List<OrderItemMessage> OrderItems { get; set; }
+       
     }
 }
+
