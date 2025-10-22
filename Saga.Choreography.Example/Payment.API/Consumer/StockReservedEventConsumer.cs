@@ -8,7 +8,7 @@ namespace Payment.API.Consumer
     {
         public async Task Consume(ConsumeContext<StockReservedEvent> context)
         {
-            if (false)
+            if (true)
             {
                 //Ödeme başarılı...
                 PaymentCompletedEvent paymentCompletedEvent = new()
