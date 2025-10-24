@@ -1,5 +1,7 @@
 
 using MassTransit;
+using Microsoft.EntityFrameworkCore;
+using Order.API.Context;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +16,10 @@ builder.Services.AddMassTransit(configurator =>
 
         
     });
+});
+builder.Services.AddDbContext<OrderDbContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("SQLServer"));
 });
 
 var app = builder.Build();
