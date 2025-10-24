@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Order.API", "Saga.Orchestra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SagaStateMachine.Service", "Saga.Orchestration.Example\SagaStateMachine.Service\SagaStateMachine.Service.csproj", "{105AC62B-B0DE-4057-9663-DA3A47860583}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payment.API", "Saga.Orchestration.Example\Payment.API\Payment.API.csproj", "{D2D77486-3B75-42DE-BC86-A1DE29A580A0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -101,6 +103,10 @@ Global
 		{105AC62B-B0DE-4057-9663-DA3A47860583}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{105AC62B-B0DE-4057-9663-DA3A47860583}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{105AC62B-B0DE-4057-9663-DA3A47860583}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2D77486-3B75-42DE-BC86-A1DE29A580A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2D77486-3B75-42DE-BC86-A1DE29A580A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2D77486-3B75-42DE-BC86-A1DE29A580A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2D77486-3B75-42DE-BC86-A1DE29A580A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -120,6 +126,7 @@ Global
 		{E1BA60D8-6C70-4FE7-8324-CFFA7D1B91FD} = {5F24BD96-AA05-4A2E-83A0-E50F8797E168}
 		{AF0018A2-3CA0-467C-B17D-2E765B34CDEC} = {D0E7ECE9-55FC-4A4A-9ECF-3F3A3F017DA5}
 		{105AC62B-B0DE-4057-9663-DA3A47860583} = {D0E7ECE9-55FC-4A4A-9ECF-3F3A3F017DA5}
+		{D2D77486-3B75-42DE-BC86-A1DE29A580A0} = {D0E7ECE9-55FC-4A4A-9ECF-3F3A3F017DA5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {ECB2FB27-3DF2-4B51-986A-220D03D5CE86}
