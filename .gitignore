@@ -372,3 +372,4 @@ FodyWeavers.xsd
 /Saga.Choreography.Example/Order.API/appsettings.json
 /Saga.Choreography.Example/Payment.API/appsettings.json
 /Saga.Choreography.Example/Stock.API/appsettings.json
+/Saga.Orchestration.Example/Order.API/appsettings.json
