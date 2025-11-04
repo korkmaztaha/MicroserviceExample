@@ -3,14 +3,10 @@
 using Stock.API.Services;
 using MongoDB.Driver;
 using Shared.Messages;
-namespace using MassTransit;
-using Shared.OrderEvents;
-using Shared.Settings;
-using Shared.StockEvents;
-using Stock.API.Services;
-using MongoDB.Driver;
+namespace Stock.API.Consumers
+{
 
-public class StockRollbackMessageConsumer(MongoDbService mongoDbService) : IConsumer<StockRollbackMessage>
+    public class StockRollbackMessageConsumer(MongoDbService mongoDbService) : IConsumer<StockRollbackMessage>
     {
         public async Task Consume(ConsumeContext<StockRollbackMessage> context)
         {
