@@ -14,7 +14,7 @@ builder.Services.AddMassTransit(configurator =>
     {
         options.AddDbContext<DbContext, OrderStateDbContext>((provider, _builder) =>
         {
-            // Use the correct connection string name from appsettings (SQLServer)
+
             _builder.UseSqlServer(builder.Configuration.GetConnectionString("SQLServer"));
         });
     });
