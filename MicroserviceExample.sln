@@ -45,6 +45,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stock.API", "Saga.Orchestra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Saga.Orchestration.Example\Shared\Shared.csproj", "{E1CAB9B1-FEDA-4EA5-AB49-B14DC6C5FFE6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Outbox.Inbox.Design.Pattern.Example", "Outbox.Inbox.Design.Pattern.Example", "{63D510D3-9AC8-4ED9-AE56-0B15C13E5019}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Order.API", "Outbox.Inbox.Design.Pattern.Example\Order.API\Order.API.csproj", "{C6B210E4-6C76-48FE-BFC2-0121465F74BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -119,6 +123,10 @@ Global
 		{E1CAB9B1-FEDA-4EA5-AB49-B14DC6C5FFE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1CAB9B1-FEDA-4EA5-AB49-B14DC6C5FFE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1CAB9B1-FEDA-4EA5-AB49-B14DC6C5FFE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6B210E4-6C76-48FE-BFC2-0121465F74BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6B210E4-6C76-48FE-BFC2-0121465F74BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6B210E4-6C76-48FE-BFC2-0121465F74BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6B210E4-6C76-48FE-BFC2-0121465F74BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -141,6 +149,7 @@ Global
 		{D2D77486-3B75-42DE-BC86-A1DE29A580A0} = {D0E7ECE9-55FC-4A4A-9ECF-3F3A3F017DA5}
 		{C5629B26-03E5-470D-AA35-44C8F201EC09} = {D0E7ECE9-55FC-4A4A-9ECF-3F3A3F017DA5}
 		{E1CAB9B1-FEDA-4EA5-AB49-B14DC6C5FFE6} = {D0E7ECE9-55FC-4A4A-9ECF-3F3A3F017DA5}
+		{C6B210E4-6C76-48FE-BFC2-0121465F74BF} = {63D510D3-9AC8-4ED9-AE56-0B15C13E5019}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {ECB2FB27-3DF2-4B51-986A-220D03D5CE86}
