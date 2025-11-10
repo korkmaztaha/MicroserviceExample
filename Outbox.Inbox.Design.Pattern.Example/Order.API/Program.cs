@@ -14,6 +14,8 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<OrderDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("MSSQLServer")));
 
+
+// mevcut senaryoda RabbitMQye ihtiyaç yok
 builder.Services.AddMassTransit(configurator =>
 {
     configurator.UsingRabbitMq((context, _configure) =>
