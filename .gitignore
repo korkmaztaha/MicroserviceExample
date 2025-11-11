@@ -376,3 +376,4 @@ FodyWeavers.xsd
 /Saga.Orchestration.Example/Payment.API/appsettings.json
 /Saga.Orchestration.Example/Stock.API/appsettings.json
 /Outbox.Inbox.Design.Pattern.Example/Order.API/appsettings.json
+/Outbox.Inbox.Design.Pattern.Example/Order.Outbox.Table.Publisher.Service/appsettings.json
