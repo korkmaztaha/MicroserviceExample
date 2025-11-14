@@ -53,6 +53,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Outbox.Inbox.Desi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Order.Outbox.Table.Publisher.Service", "Outbox.Inbox.Design.Pattern.Example\Order.Outbox.Table.Publisher.Service\Order.Outbox.Table.Publisher.Service.csproj", "{012212BF-38B2-4E56-9DE3-1602F3B54807}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stock.Service", "Outbox.Inbox.Design.Pattern.Example\Stock.Service\Stock.Service.csproj", "{A5D40E95-DF79-45E7-8DD0-2B8C33EF3F27}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -139,6 +141,10 @@ Global
 		{012212BF-38B2-4E56-9DE3-1602F3B54807}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{012212BF-38B2-4E56-9DE3-1602F3B54807}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{012212BF-38B2-4E56-9DE3-1602F3B54807}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5D40E95-DF79-45E7-8DD0-2B8C33EF3F27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5D40E95-DF79-45E7-8DD0-2B8C33EF3F27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5D40E95-DF79-45E7-8DD0-2B8C33EF3F27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5D40E95-DF79-45E7-8DD0-2B8C33EF3F27}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -164,6 +170,7 @@ Global
 		{C6B210E4-6C76-48FE-BFC2-0121465F74BF} = {63D510D3-9AC8-4ED9-AE56-0B15C13E5019}
 		{A27F26E7-2E51-4559-947D-CB54177B7493} = {63D510D3-9AC8-4ED9-AE56-0B15C13E5019}
 		{012212BF-38B2-4E56-9DE3-1602F3B54807} = {63D510D3-9AC8-4ED9-AE56-0B15C13E5019}
+		{A5D40E95-DF79-45E7-8DD0-2B8C33EF3F27} = {63D510D3-9AC8-4ED9-AE56-0B15C13E5019}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {ECB2FB27-3DF2-4B51-986A-220D03D5CE86}
