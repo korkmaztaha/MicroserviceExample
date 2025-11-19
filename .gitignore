@@ -378,3 +378,5 @@ FodyWeavers.xsd
 /Outbox.Inbox.Design.Pattern.Example/Order.API/appsettings.json
 /Outbox.Inbox.Design.Pattern.Example/Order.Outbox.Table.Publisher.Service/appsettings.json
 /Outbox.Inbox.Design.Pattern.Example/Stock.Service/appsettings.json
+/Event.Store.Read.Data.Example/Product.Application/appsettings.json
+/Event.Store.Read.Data.Example/Product.Event.Handler.Service/appsettings.json
