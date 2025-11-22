@@ -1,26 +1,21 @@
 ﻿using MongoDB.Driver;
 using Shared.Services.Abstractions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 
 namespace Shared.Services
 {
     public class MongoDBService : IMongoDBService
     {
-        public IMongoCollection<T> GetCollection<T>(string collectionName)
+        private readonly IMongoDatabase _database;
+
+        public MongoDBService(string connectionString = "mongodb://localhost:27017", string databaseName = "ProductDB")
         {
-            IMongoDatabase database = GetDatabase();
-            return database.GetCollection<T>(collectionName);
+            var mongoClient = new MongoClient(connectionString);
+            _database = mongoClient.GetDatabase(databaseName);
         }
 
-        public IMongoDatabase GetDatabase(string databaseName = "ProductDB", string connectionString = "mongodb://localhost:27017")
+        public IMongoCollection<T> GetCollection<T>(string collectionName)
         {
-            MongoClient mongoClient = new(connectionString);
-            return mongoClient.GetDatabase(databaseName);
+            return _database.GetCollection<T>(collectionName);
         }
     }
 }
