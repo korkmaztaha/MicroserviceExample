@@ -380,3 +380,7 @@ FodyWeavers.xsd
 /Outbox.Inbox.Design.Pattern.Example/Stock.Service/appsettings.json
 /Event.Store.Read.Data.Example/Product.Application/appsettings.json
 /Event.Store.Read.Data.Example/Product.Event.Handler.Service/appsettings.json
+/Health.Checks.Example/ServiceA/ServiceA/appsettings.json
+/Health.Checks.Example/ServiceB/appsettings.json
+/Health.Checks.Example/Monitoring.Service/appsettings.json
+/Health.Checks.Example/ServiceA/appsettings.json
